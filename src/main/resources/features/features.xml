@@ -1,0 +1,5 @@
+<features>
+	<feature name="waterFall" version="0.0.1">
+		<bundle>mvn:com.waterFall/WaterFall-ActiveMQ-OSGI/0.0.1</bundle>
+	</feature>
+</features>
