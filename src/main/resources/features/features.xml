@@ -1,5 +1,9 @@
 <features>
+	<repository>mvn:org.apache.camel.karaf/apache-camel/2.20.1/xml/features</repository>
 	<feature name="waterFall" version="0.0.1">
-		<bundle>mvn:com.waterFall/WaterFall-ActiveMQ-OSGI/0.0.1</bundle>
+		<feature version="2.20.1">camel-blueprint</feature>
+		<feature version="2.20.1">camel-core</feature>
+		<feature version="2.20.1">camel-quartz2</feature>
+		<bundle start-level="85">mvn:com.helmi.osgi/waterFall-ActiveMQ-OSGI/0.0.1</bundle>
 	</feature>
 </features>
