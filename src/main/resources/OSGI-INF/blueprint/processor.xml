@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" default-activation="lazy">
+
+	<bean id="MessageGenerator" class="com.waterFall.processors.Generator"/>
+	<bean id="MessageProcessor" class="com.waterFall.processors.MessageProcessor"/>
+
+	<camelContext xmlns="http://camel.apache.org/schema/blueprint">
+		<route id="Generator">
+			<from uri="quartz2://Generator/myTimer?cron=0/10+*+*+*+*+?"/>
+			<process ref="MessageGenerator"/>
+		</route>
+		
+		<route id="route1">
+			<from uri="activemq:queue:JMS_1" />
+			<log message="Jms message received : ${body}" loggingLevel="INFO" logName="pipe1" />
+			<process ref="MessageProcessor" />
+			<to uri="activemq:queue:JMS_2" />
+		</route>
+		
+		<route id="route2">
+			<from uri="activemq:queue:JMS_2" />
+			<log message="Jms message received : ${body}" loggingLevel="INFO" logName="pipe2" />
+			<process ref="MessageProcessor" />
+			<to uri="activemq:queue:JMS_3" />
+		</route>
+		
+		<route id="route3">
+			<from uri="activemq:queue:JMS_3" />
+			<log message="Jms message received : ${body}" loggingLevel="INFO" logName="pipe3" />
+			<process ref="MessageProcessor" />
+			<to uri="activemq:queue:JMS_4" />
+		</route>
+		
+	</camelContext>
+
+		
+
+
+</blueprint>

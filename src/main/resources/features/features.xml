@@ -1,6 +1,8 @@
 <features>
 	<repository>mvn:org.apache.camel.karaf/apache-camel/2.20.1/xml/features</repository>
+	<repository>mvn:org.apache.activemq/activemq-karaf/5.14.0/xml/features</repository>
 	<feature name="waterFall" version="0.0.1">
+		<feature version="5.14.0">activemq-camel</feature>
 		<feature version="2.20.1">camel-blueprint</feature>
 		<feature version="2.20.1">camel-core</feature>
 		<feature version="2.20.1">camel-quartz2</feature>
