@@ -9,7 +9,8 @@ public class Generator implements Processor {
 	
 	@Override
 	public void process(Exchange exchange) throws Exception {
-		logger.info("This is a test message");
+		logger.info("Generator messages triggred");
+		
 	}
 
 }

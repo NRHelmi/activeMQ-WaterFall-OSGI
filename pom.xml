@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.helmi.osgi</groupId>
-    <artifactId>waterFall-ActiveMQ-OSGI</artifactId>
+    <artifactId>waterFall-amq</artifactId>
     <version>0.0.1</version>
     <packaging>bundle</packaging>
 
@@ -54,7 +54,7 @@
 						</goals>
 						<configuration>
 							<groupId>com.helmi.osgi</groupId>
-							<artifactId>waterFall-ActiveMQ-OSGI</artifactId>
+							<artifactId>waterFall-amq</artifactId>
 							<version>0.0.1</version>
 							<classifier>features</classifier>
 							<packaging>xml</packaging>
@@ -84,6 +84,12 @@
     <groupId>log4j</groupId>
     <artifactId>log4j</artifactId>
     <version>1.2.17</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.activemq</groupId>
+    <artifactId>activemq-broker</artifactId>
+    <version>5.14.0</version>
 </dependency>
 
 
